@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -34,5 +34,26 @@
   }
   to {
     transform: rotate(360deg);
+  }
+} */
+
+/* Base styles — for mobile portrait (default) */
+.heading-text {
+  font-size: 20px;
+  color: #3d3d3d;
+  margin: 0;
+}
+
+/* Smartphones landscape (≥480px) */
+@media only screen and (min-width: 480px) {
+  .heading-text {
+    font-size: 26px;
+  }
+}
+
+/* Tablets and up (≥768px) */
+@media only screen and (min-width: 768px) {
+  .heading-text {
+    font-size: 34px;
   }
 }

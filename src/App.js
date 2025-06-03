@@ -9,12 +9,12 @@ function App() {
   const [mode, setMode] = useState("Both");
   const [searchedValue, setSearchedValue] = useState("");
   const { data, loading, error } = useFetch(
-    "https://bi-meetup-backend.vercel.app/events"
+    "https://meetup-backend-mu.vercel.app/events"
   );
 
 
   const filteredMode =
-    mode === "Both" ? data : data.filter((event) => event.eventMode === mode);
+    mode === "Both" ? data : data?.filter((event) => event.eventMode === mode);
 
   const filteredEvents = filteredMode?.filter((event) => {
     const search = searchedValue.toLowerCase();
@@ -72,7 +72,7 @@ function App() {
         </section>
 
         {/* cards section */}
-        <section className="container container-md mb-4">
+        <section className="container mb-4">
           <div className="row gx-5">
             {filteredEvents &&
               filteredEvents.map((event) => (
@@ -91,7 +91,7 @@ function App() {
                       </div>
                       <div>
                         <Link
-                          to={`/${event.title.replace(" ", "").toLowerCase()}`}
+                          to={`/meetupdetails/${event.id}`}
                           className="card-title fw-bold d-block text-decoration-none fs-4"
                         >
                           {event.title}

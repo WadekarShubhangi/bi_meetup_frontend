@@ -1,26 +1,33 @@
-import Header from '../components/Header'
-import Footer from '../components/Footer'
-import useFetch from '../useFetch';
-const HealthSummit = () => {
-  const { data, loading, error } = useFetch(
-    "https://bi-meetup-backend.vercel.app/events"
-  );
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import useFetch from "../useFetch";
+import { useParams } from "react-router-dom";
 
-  const selectedData = data?.find((event) => event.title === "Health Summit");
+const MeetupDetails = () => {
+  const eventId = useParams();
+  const { data, loading, error } = useFetch(
+    "https://meetup-backend-mu.vercel.app/events"
+  );
+console.log(eventId)
+  const selectedData = data?.find((event) => event.id == eventId.eventId);
   console.log(selectedData);
   return (
     <>
       <Header />
       <div className="container">
         <div className="row py-3">
-          <div className=" col-lg-8 col-md-6 col-12">
+          {/* left section */}
+          <section className=" col-lg-8 col-md-6 col-12">
+            {/* heading */}
             <h1 className="fs-2 fw-bold">{selectedData?.title}</h1>
+            {/* hosting */}
             <div className="my-2">
               <small className="d-block m-0">Hosted By:</small>
               <small className="fw-bold d-block mb-4">
                 {selectedData?.hostedBy}
               </small>
             </div>
+            {/* img */}
             <div className="">
               <img
                 src={selectedData?.image}
@@ -28,11 +35,12 @@ const HealthSummit = () => {
                 className="object-fit-cover img-fluid"
               />
             </div>
+            {/* details */}
             <div className="my-3">
               <h4 className="fw-bold">Details: </h4>
               <p>{selectedData?.details}</p>
             </div>
-
+            {/* additional info */}
             <div>
               <h4 className="fw-bold">Additional Information: </h4>
               {selectedData?.additionalInfo &&
@@ -44,17 +52,20 @@ const HealthSummit = () => {
                   )
                 )}
             </div>
-
+            {/* tags */}
             <div className="my-3">
               <h4 className="fw-bold">Event Tags:</h4>
               {selectedData?.tags.map((tag) => (
                 <button className="btn btn-danger me-3">{tag}</button>
               ))}
             </div>
-          </div>
-          <div className=" col-lg-4 col-md-6 col-12">
+          </section>
+
+          {/* right section */}
+          <section className=" col-lg-4 col-md-6 col-12">
+            {/*  more info card */}
             <div className="my-3 shadow p-3 bg-body-tertiary rounded">
-              <div className="card-body">
+              <div className="">
                 <div className="d-flex align-items-center my-3">
                   <span id="addon-wrapping" className="d-block me-3">
                     <i className="bi bi-clock-history"></i>
@@ -78,13 +89,14 @@ const HealthSummit = () => {
                 </div>
                 <div className="d-flex  align-items-center my-3">
                   <span id="addon-wrapping" className="d-block me-3">
-                    <i class="bi bi-currency-rupee"></i>
+                    <i className="bi bi-currency-rupee"></i>
                   </span>
                   <small>{selectedData?.price}</small>
                 </div>
               </div>
             </div>
 
+            {/* speakers card */}
             <div className="mt-5">
               <h4 className="fw-bold mb-3">
                 {" "}
@@ -113,14 +125,15 @@ const HealthSummit = () => {
               </div>
             </div>
 
+            {/* disabled button */}
             <div className="text-center">
               <button className="btn btn-danger py-1 px-5">RSVP</button>
             </div>
-          </div>
+          </section>
         </div>
       </div>
       <Footer />
     </>
   );
 };
-export default HealthSummit;
+export default MeetupDetails;

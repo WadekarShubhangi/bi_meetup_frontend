@@ -8,9 +8,9 @@ const MeetupDetails = () => {
   const { data, loading, error } = useFetch(
     "https://meetup-backend-mu.vercel.app/events"
   );
-console.log(eventId)
+
   const selectedData = data?.find((event) => event.id == eventId.eventId);
-  console.log(selectedData);
+ 
   return (
     <>
       <Header />

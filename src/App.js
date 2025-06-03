@@ -60,10 +60,10 @@ function App() {
             <select
               className="form-select form-select-sm"
               style={{ height: "30px", marginLeft: "8px", width: "200px" }}
-              aria-label="Default select example"
+              // aria-label="Default select example"
               onChange={(e) => setMode(e.target.value)}
             >
-              <option selected>Select Event Type</option>
+              <option value="">Select Event Type</option>
               <option value="Online">Online</option>
               <option value="Offline">Offline</option>
               <option value="Both">Both</option>

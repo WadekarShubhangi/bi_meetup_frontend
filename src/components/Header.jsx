@@ -6,7 +6,7 @@ const Header = () => {
         <nav className="navbar">
           <div className="mx-2">
             <NavLink className="navbar-brand" to="/">
-              <img src='./meetup_logo.png' className="img-fluid" alt="logo" style={{ width: "100px", height: "auto" }}/>
+              <img src='./meetup_logo.png' className="img-fluid" alt="logo" style={{ width : "100px", height: "auto"}}/>
             </NavLink>
           </div>
         </nav>

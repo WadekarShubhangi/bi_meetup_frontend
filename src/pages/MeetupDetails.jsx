@@ -55,8 +55,8 @@ const MeetupDetails = () => {
             {/* tags */}
             <div className="my-3">
               <h4 className="fw-bold">Event Tags:</h4>
-              {selectedData?.tags.map((tag) => (
-                <button className="btn btn-danger me-3">{tag}</button>
+              {selectedData?.tags.map((tag, index) => (
+                <button key={index} className="btn btn-danger me-3">{tag}</button>
               ))}
             </div>
           </section>
@@ -104,8 +104,8 @@ const MeetupDetails = () => {
               </h4>
 
               <div className="row">
-                {selectedData?.speakers.map((speaker) => (
-                  <div className="col-md-6">
+                {selectedData?.speakers.map((speaker, index) => (
+                  <div className="col-md-6 " key={index}>
                     <div className="shadow p-3 mb-5 bg-body-tertiary rounded text-center py-3">
                       <img
                         src="https://media.istockphoto.com/id/1459178010/photo/fashion-industry-black-woman-and-designer-portrait-of-clothing-tailor-with-business-vision.jpg?s=1024x1024&w=is&k=20&c=dTTKGF31JvCEfYDIL90OT2d0OVgZ5jLtFwFSK7TwNUs="

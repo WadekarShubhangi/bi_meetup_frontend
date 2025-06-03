@@ -7,9 +7,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import ArtShowcase from "./pages/ArtShowcase";
+import ArtTherapyWorkshop from "./pages/ArtTherapyWorkshop";
 import StartupMeetup from "./pages/StartupMeetup";
-import CodingHackathon from "./pages/CodingHackathon";
+import TechCareerFair from "./pages/TechCareerFair";
 import FinanceBootcamp from "./pages/FinanceBootcamp";
 import HealthSummit from "./pages/HealthSummit";
 import PhotographyWalk from "./pages/PhotographyWalk";
@@ -25,12 +25,12 @@ const router = createBrowserRouter([
     element: <StartupMeetup />,
   },
   {
-    path: "/artshowcase",
-    element: <ArtShowcase />,
+    path: "/ArtTherapyWorkshop",
+    element: <ArtTherapyWorkshop />,
   },
   {
-    path: "/codinghackathon",
-    element: <CodingHackathon />,
+    path: "/techcareerFair",
+    element: <TechCareerFair />,
   },
   {
     path: "/financebootcamp",

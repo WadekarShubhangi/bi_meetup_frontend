@@ -1,12 +1,12 @@
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import useFetch from "../useFetch";
-const ArtShowcase = () => {
+import Header from '../components/Header'
+import Footer from '../components/Footer'
+import useFetch from '../useFetch';
+const TechCareerFair = () => {
   const { data, loading, error } = useFetch(
     "https://bi-meetup-backend.vercel.app/events"
   );
 
-  const selectedData = data?.find((event) => event.title === "Art Showcase");
+  const selectedData = data?.find((event) => event.title === "Coding Hackathon");
   console.log(selectedData);
   return (
     <>
@@ -123,4 +123,4 @@ const ArtShowcase = () => {
     </>
   );
 };
-export default ArtShowcase;
+export default TechCareerFair;

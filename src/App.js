@@ -79,7 +79,7 @@ function App() {
                   <div className="card border-0 my-2 bg-body-tertiary position-relative shadow-sm">
                     <img
                       src={event.image}
-                      className="card-img-top rounded-2"
+                      className="card-img-top rounded-2 img-fluid"
                       alt={event.title}
                     />
                     <div className="card-body p-0">

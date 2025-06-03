@@ -12,7 +12,6 @@ function App() {
     "https://meetup-backend-mu.vercel.app/events"
   );
 
-
   const filteredMode =
     mode === "Both" ? data : data?.filter((event) => event.eventMode === mode);
 

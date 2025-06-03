@@ -1,7 +1,9 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import useFetch from "../useFetch";
+import { NavLink } from "react-router-dom";
 import { useParams } from "react-router-dom";
+
 
 const MeetupDetails = () => {
   const eventId = useParams();
@@ -10,10 +12,11 @@ const MeetupDetails = () => {
   );
 
   const selectedData = data?.find((event) => event.id == eventId.eventId);
- 
+
   return (
     <>
       <Header />
+      
       <div className="container">
         <div className="row py-3">
           {/* left section */}
@@ -56,7 +59,9 @@ const MeetupDetails = () => {
             <div className="my-3">
               <h4 className="fw-bold">Event Tags:</h4>
               {selectedData?.tags.map((tag, index) => (
-                <button key={index} className="btn btn-danger me-3">{tag}</button>
+                <button key={index} className="btn btn-danger me-3">
+                  {tag}
+                </button>
               ))}
             </div>
           </section>

@@ -58,7 +58,7 @@ function App() {
             </form>
             <select
               className="form-select form-select-sm"
-              style={{ height: "30px", marginLeft: "8px", width: "200px" }}
+              style={{ height: "30px", marginLeft: "8px", maxWidth: "100%", width: "auto" }}
               // aria-label="Default select example"
               onChange={(e) => setMode(e.target.value)}
             >
